@@ -1,6 +1,4 @@
-
-#ifndef CALCULATOR
-#define CALCULATOR
+#pragma once
 
 #include<map>
 #include<functional>
@@ -28,5 +26,3 @@ private:
 	void clean_stack(std::stack<std::string> st);
 	Dll_Reader reader;
 };
-
-#endif
