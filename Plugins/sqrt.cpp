@@ -1,6 +1,7 @@
-#include<cmath>
-extern "C" __declspec(dllexport)
+#include <cmath>
+#include <initializer_list>
 
-double universal_func(double num) {
-	return std::sqrt(num);
+extern "C" __declspec(dllexport)
+double universal_func(std::initializer_list<double> x) {
+	return std::sqrt(*x.begin());
 }

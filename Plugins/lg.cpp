@@ -1,6 +1,7 @@
-#include<cmath>
-extern "C" __declspec(dllexport)
+#include <cmath>
+#include <initializer_list>
 
-double universal_func(double num) {
-	return std::log(num)/std::log(10);
+extern "C" __declspec(dllexport)
+double universal_func(std::initializer_list<double> x) {
+	return std::log(*x.begin())/ std::log(10);
 }

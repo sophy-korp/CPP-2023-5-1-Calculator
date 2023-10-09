@@ -1,6 +1,7 @@
-#include<cmath>
-extern "C" __declspec(dllexport)
+#include <cmath>
+#include <initializer_list>
 
-double universal_func(double num) {
-	return std::cos(num)/std::sin(num);
+extern "C" __declspec(dllexport)
+double universal_func(std::initializer_list<double> x) {
+	return std::cos(*x.begin())/ std::sin(*x.begin());
 }

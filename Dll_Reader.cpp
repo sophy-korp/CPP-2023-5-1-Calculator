@@ -17,10 +17,10 @@ Dll_Reader::Dll_Reader() {
 
 			std::string function = function_name.substr(0, function_name.find(".dll"));
 
-			auto func = (double(*)(double))GetProcAddress(hm, "universal_func");
+			auto func = (double(*)(std::initializer_list<double>))GetProcAddress(hm, "universal_func");
 
 			if (func) {
-				plugins.insert(std::pair<std::string, double(*)(double)>(function, func));
+				plugins.insert(std::pair<std::string, double(*)(std::initializer_list<double>)>(function, func));
 			}
 			else throw std::exception();
 		} while (FindNextFileA(detect, &detection) != NULL);
@@ -28,7 +28,7 @@ Dll_Reader::Dll_Reader() {
 }
 
 double Dll_Reader::calculate(std::string str, double num) {
-	return(plugins[str](num));
+	return(plugins[str]({ num }));
 }
 
 bool Dll_Reader::is_in_plugins(std::string str) {

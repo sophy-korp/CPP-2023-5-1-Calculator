@@ -11,7 +11,7 @@ public:
 	bool is_in_plugins(std::string str);
 private:
 	std::string path = "C:\\Users\\Admin\\source\\repos\\calculator_lab1\\Plugins\\";
-	std::map<std::string, double(*)(double)> plugins;
+	std::map<std::string, double(*)(std::initializer_list<double>)> plugins;
 
 };
 
