@@ -1,5 +1,4 @@
-#ifndef DLL_READER
-#define DLL_READER
+#pragma once
 
 #include<string>
 #include<map>
@@ -15,5 +14,4 @@ private:
 
 };
 
-#endif 
 
